@@ -6,6 +6,7 @@ import ProfessionalExperience from "./components/ProfessionalExperience";
 import Projects from "./components/Projects";
 import SkillSets from "./components/SkillSets";
 import Footer from "./components/Footer";
+
 function App() {
   const handleDownload = () => {
     const link = document.createElement("a");
@@ -96,7 +97,7 @@ function App() {
           </div>
         </div>
       </div>
-      <Contacts />
+     <Contacts />
       <ProfessionalExperience />
       <Certifications />
       <Projects />

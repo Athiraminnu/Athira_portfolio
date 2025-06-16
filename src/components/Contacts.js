@@ -2,13 +2,13 @@ import { useState } from "react";
 
 function Contacts() {
   const contactInfo = [
-    { icon: "fa-solid fa-location-dot", alt: "Thiruvananthapuram" }, // No link
+    { icon: "fa-solid fa-location-dot", alt: "Thiruvananthapuram" },
     { icon: "fa-solid fa-phone", alt: "6282794146", href: "tel:6282794146" },
     { icon: "fa-solid fa-envelope", alt: "athiraminnu1999@gmail.com", href: "mailto:athiraminnu1999@gmail.com" },
     { icon: "fa-brands fa-linkedin-in", alt: "www.linkedin.com/in/athira1999", href: "https://www.linkedin.com/in/athira1999" },
     { icon: "fa-brands fa-github", alt: "https://github.com/Athiraminnu", href: "https://github.com/Athiraminnu" },
-  ];  
-  
+  ];
+
   const [hoverInfo, setHoverInfo] = useState(null);
 
   const handleMouseEnter = (index) => {
@@ -30,6 +30,7 @@ function Contacts() {
             marginBottom: "1rem",
             transition: "transform 0.3s ease, filter 0.3s ease",
             transform: hoverInfo === index ? "scale(1.1)" : "scale(1)",
+            color: "black",
           }}
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={handleMouseLeave}
@@ -63,8 +64,9 @@ function Contacts() {
               alignItems: "center",
               fontSize: "1rem", // Adjusted size for better visibility
               textAlign: "center",
-              lineHeight: "1rem", 
+              lineHeight: "1rem",
               right: "0rem",// Matches icon size for proper alignment
+              color: "black",
             }}
           ></i>
         </div>
