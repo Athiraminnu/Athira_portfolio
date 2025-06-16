@@ -35,7 +35,7 @@ function Education() {
       <div className="col end-0  rounded">
         <img
           className="mx-5 px-5"
-          src="/images/grad3.jpg"
+          src={`${process.env.PUBLIC_URL}/images/grad3.jpg`}
           alt="education"
           height="320px"
         />

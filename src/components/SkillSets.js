@@ -1,16 +1,16 @@
 import { useState } from "react";
 
 function SkillSets() {
-  const images = [
-    { src: "/images/Python-logo-notext.svg.png", alt: "Python logo" },
-    { src: "/images/HTML5_logo_and_wordmark.svg.png", alt: "HTML logo" },
-    { src: "/images/CSS.png", alt: "CSS logo" },
-    { src: "/images/Bootstrap_logo.svg.png", alt: "Bootstrap logo" },
-    { src: "/images/MySQL_logo.svg.png", alt: "MySQL logo" },
-    { src: "/images/Django_logo.svg.png", alt: "Django logo" },
-    { src: "/images/React_Logo_SVG.svg.png", alt: "Logo of React JS" },
-    { src: "/images/ISO_C++_Logo.svg.png", alt: "C++ logo" },
-  ];
+const images = [
+  { src: `${process.env.PUBLIC_URL}/images/Python-logo-notext.svg.png`, alt: "Python logo" },
+  { src: `${process.env.PUBLIC_URL}/images/HTML5_logo_and_wordmark.svg.png`, alt: "HTML logo" },
+  { src: `${process.env.PUBLIC_URL}/images/CSS.png`, alt: "CSS logo" },
+  { src: `${process.env.PUBLIC_URL}/images/Bootstrap_logo.svg.png`, alt: "Bootstrap logo" },
+  { src: `${process.env.PUBLIC_URL}/images/MySQL_logo.svg.png`, alt: "MySQL logo" },
+  { src: `${process.env.PUBLIC_URL}/images/Django_logo.svg.png`, alt: "Django logo" },
+  { src: `${process.env.PUBLIC_URL}/images/React_Logo_SVG.svg.png`, alt: "Logo of React JS" },
+  { src: `${process.env.PUBLIC_URL}/images/ISO_C++_Logo.svg.png`, alt: "C++ logo" },
+];
 
   const [hoverImage, setHoverImage] = useState(null);
 

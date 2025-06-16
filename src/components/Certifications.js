@@ -7,7 +7,7 @@ function Certifications() {
     >
       <div className="col py-3">
         <img
-          src="/images/cert3.jpg"
+          src={`${process.env.PUBLIC_URL}/images/cert3.jpg`}
           alt="Python Full Stack Certificate"
           height="300px"
           width="430px"

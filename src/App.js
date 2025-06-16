@@ -39,16 +39,17 @@ function App() {
           className="d-flex gap-3 align-items-center px-5"
           style={{ color: "black" }}
         >
-          <img
-            src="/images/me.jpg"
-            alt="my"
-            style={{
-              borderRadius: "15px",
-              width: "110px",
-              height: "150px",
-              objectFit: "cover",
-            }}
-          />
+        <img
+          src={`${process.env.PUBLIC_URL}/images/me.jpg`}
+          alt="my"
+          style={{
+            borderRadius: "15px",
+            width: "110px",
+            height: "150px",
+            objectFit: "cover",
+          }}
+        />
+
 
           <div style={{ flex: 1 }}>
             <h1
