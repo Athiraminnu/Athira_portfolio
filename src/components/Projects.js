@@ -67,7 +67,7 @@ function Projects() {
             >
               <div className="card-body d-flex flex-column">
                 <h6 className="card-title">{project.title}</h6>
-                <p className="card-subtitle mb-2 text-muted">{project.date}</p>
+                <p className="card-subtitle mb-2 text-muted text-end">{project.date}</p>
                 <p className="card-text flex-grow-1">
                   {truncateDescription(project.description)}
                   {project.description.split(" ").length > 17 && (
@@ -120,7 +120,7 @@ function Projects() {
                 ></button>
               </div>
               <div className="modal-body">
-                <p className="text-muted">{selectedProject.date}</p>
+                <p className="text-muted text-end">{selectedProject.date}</p>
                 <p>{selectedProject.description}</p>
               </div>
               <div className="modal-footer">

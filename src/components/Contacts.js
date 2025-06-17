@@ -55,13 +55,14 @@ function Contacts() {
     padding: "0.5rem",
   };
 
-  const labelStyle = (visible) => ({
-    marginRight: "1rem",
-    visibility: visible ? "visible" : "hidden",
-    opacity: visible ? 1 : 0,
-    transition: "opacity 0.3s ease",
-    whiteSpace: "nowrap",
-  });
+const labelStyle = (visible) => ({
+  marginRight: "0.5rem",
+  visibility: visible ? "visible" : "hidden",
+  opacity: visible ? 1 : 0,
+  transition: "opacity 0.3s ease",
+  whiteSpace: "nowrap",
+  textAlign: "right",
+});
 
   const linkStyle = {
     fontSize: "1rem",
@@ -69,17 +70,18 @@ function Contacts() {
     textDecoration: "none",
   };
 
-  const itemStyle = (hovered) => ({
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-end",
-    marginBottom: isMobile ? "0.5rem" : "1rem",
-    marginRight: isMobile ? "1rem" : 0,
-    flexDirection: isMobile ? "column" : "row",
-    transform: hovered ? "scale(1.1)" : "scale(1)",
-    transition: "transform 0.3s ease",
-    cursor: "pointer",
-  });
+const itemStyle = (hovered) => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: isMobile ? "center" : "flex-end",
+  marginBottom: isMobile ? "0.5rem" : "1rem",
+  marginRight: isMobile ? "1rem" : 0,
+  flexDirection: isMobile ? "column" : "row",
+  transform: hovered ? "scale(1.1)" : "scale(1)",
+  transition: "transform 0.3s ease",
+  cursor: "pointer",
+  width: isMobile ? "auto" : "100%", // ensures alignment in desktop
+});
 
   return (
     <div style={containerStyle}>
@@ -112,7 +114,9 @@ function Contacts() {
             <i className={info.icon} style={iconStyle}></i>
           </a>
           {isMobile && hoverInfo === index && (
-            <p style={{ fontSize: "0.8rem", textAlign: "center" }}>{info.alt}</p>
+            <p style={{ fontSize: "0.8rem", textAlign: "center", marginTop: "0.3rem" }}>
+                {info.alt}
+            </p>
           )}
         </div>
       ))}

@@ -5,7 +5,7 @@ function Links() {
 
   const links = [
     { href: "#experience", heading: "Professional Experience" },
-    { href: "#certifications", heading: "Certifications" },
+    { href: "#certifications", heading: "Internship" },
     { href: "#skills", heading: "Skills" },
     { href: "#projects", heading: "Projects" },
     { href: "#education", heading: "Education" },

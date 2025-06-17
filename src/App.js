@@ -67,8 +67,7 @@ function App() {
                 textAlign: "justify",
               }}
             >
-              Motivated and detail-oriented Python Full Stack Developer with experience in Django, React, and MySQL. Passionate about building scalable web applications and eager to apply problem-solving and technical skills to innovative projects.
-            </p>
+Motivated and detail-oriented aspiring React.js Developer with a strong foundation in web development and a passion for building responsive, user-friendly applications. Skilled in Python, Django, MySQL, and React.js, with a solid understanding of RESTful APIs and component-based architecture. Eager to apply problem-solving and technical skills to real-world projects in a collaborative environment.            </p>
           </div>
 
           {/* Button Section */}
