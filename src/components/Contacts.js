@@ -1,74 +1,119 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Contacts() {
   const contactInfo = [
     { icon: "fa-solid fa-location-dot", alt: "Thiruvananthapuram" },
     { icon: "fa-solid fa-phone", alt: "6282794146", href: "tel:6282794146" },
-    { icon: "fa-solid fa-envelope", alt: "athiraminnu1999@gmail.com", href: "mailto:athiraminnu1999@gmail.com" },
-    { icon: "fa-brands fa-linkedin-in", alt: "www.linkedin.com/in/athira1999", href: "https://www.linkedin.com/in/athira1999" },
-    { icon: "fa-brands fa-github", alt: "https://github.com/Athiraminnu", href: "https://github.com/Athiraminnu" },
+    {
+      icon: "fa-solid fa-envelope",
+      alt: "athiraminnu1999@gmail.com",
+      href: "mailto:athiraminnu1999@gmail.com",
+    },
+    {
+      icon: "fa-brands fa-linkedin-in",
+      alt: "www.linkedin.com/in/athira1999",
+      href: "https://www.linkedin.com/in/athira1999",
+    },
+    {
+      icon: "fa-brands fa-github",
+      alt: "https://github.com/Athiraminnu",
+      href: "https://github.com/Athiraminnu",
+    },
   ];
 
   const [hoverInfo, setHoverInfo] = useState(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-  const handleMouseEnter = (index) => {
-    setHoverInfo(index);
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const containerStyle = {
+    position: "fixed",
+    zIndex: 1000,
+    display: "flex",
+    flexDirection: isMobile ? "row" : "column",
+    justifyContent: isMobile ? "space-around" : "flex-start",
+    alignItems: "center",
+    flexWrap: isMobile ? "wrap" : "nowrap",
+    bottom: isMobile ? 0 : "auto",
+    top: isMobile ? "auto" : "50%",
+    right: isMobile ? 0 : "2%",
+    left: isMobile ? 0 : "auto",
+    transform: isMobile ? "none" : "translateY(-50%)",
+    backgroundColor: isMobile ? "#f8f9fa" : "transparent",
+    padding: isMobile ? "0.7rem 1rem" : 0,
+    boxShadow: isMobile ? "0 -2px 5px rgba(0,0,0,0.1)" : "none",
+    width: isMobile ? "100%" : "auto",
   };
-  const handleMouseLeave = () => {
-    setHoverInfo(null);
+
+  const iconStyle = {
+    fontSize: "1.2rem",
+    color: "black",
+    padding: "0.5rem",
   };
+
+  const labelStyle = (visible) => ({
+    marginRight: "1rem",
+    visibility: visible ? "visible" : "hidden",
+    opacity: visible ? 1 : 0,
+    transition: "opacity 0.3s ease",
+    whiteSpace: "nowrap",
+  });
+
+  const linkStyle = {
+    fontSize: "1rem",
+    color: "black",
+    textDecoration: "none",
+  };
+
+  const itemStyle = (hovered) => ({
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    marginBottom: isMobile ? "0.5rem" : "1rem",
+    marginRight: isMobile ? "1rem" : 0,
+    flexDirection: isMobile ? "column" : "row",
+    transform: hovered ? "scale(1.1)" : "scale(1)",
+    transition: "transform 0.3s ease",
+    cursor: "pointer",
+  });
 
   return (
-    <div className="position-fixed" style={{ top: "50%", left: "80%", transform: "translateY(-50%)" }}>
+    <div style={containerStyle}>
       {contactInfo.map((info, index) => (
         <div
           key={index}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "flex-end",
-            marginBottom: "1rem",
-            transition: "transform 0.3s ease, filter 0.3s ease",
-            transform: hoverInfo === index ? "scale(1.1)" : "scale(1)",
-            color: "black",
-          }}
-          onMouseEnter={() => handleMouseEnter(index)}
-          onMouseLeave={handleMouseLeave}
+          style={itemStyle(hoverInfo === index)}
+          onMouseEnter={() => !isMobile && setHoverInfo(index)}
+          onMouseLeave={() => !isMobile && setHoverInfo(null)}
+          onClick={() => isMobile && setHoverInfo(index)}
         >
-          <p
-            className="mb-0 text-end"
-            style={{
-              marginRight: "1rem",
-              visibility: hoverInfo === index ? "visible" : "hidden",
-              opacity: hoverInfo === index ? 1 : 0,
-              transition: "opacity 0.3s ease",
-              whiteSpace: "nowrap", // Prevents text wrapping
-            }}
+          {!isMobile && (
+            <p style={labelStyle(hoverInfo === index)}>
+              <a
+                href={info.href || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={linkStyle}
+              >
+                {info.alt}
+              </a>
+            </p>
+          )}
+          <a
+            href={info.href || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={linkStyle}
           >
-            <a
-              style={{
-                fontSize: "1rem",
-                color: "black",
-                textDecoration: "none",
-              }}
-              href={info.href} // Fixed href, should be the actual URL
-              target="_blank" // Opens the link in a new tab
-              rel="noopener noreferrer" // Ensures security for external links
-            >
-              {info.alt}
-            </a>
-          </p>
-          <i
-            className={info.icon}
-            style={{
-              alignItems: "center",
-              fontSize: "1rem", // Adjusted size for better visibility
-              textAlign: "center",
-              lineHeight: "1rem",
-              right: "0rem",// Matches icon size for proper alignment
-              color: "black",
-            }}
-          ></i>
+            <i className={info.icon} style={iconStyle}></i>
+          </a>
+          {isMobile && hoverInfo === index && (
+            <p style={{ fontSize: "0.8rem", textAlign: "center" }}>{info.alt}</p>
+          )}
         </div>
       ))}
     </div>

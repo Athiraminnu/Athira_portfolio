@@ -10,13 +10,8 @@ function Projects() {
       : text;
   };
 
-  const handleShowMore = (project) => {
-    setSelectedProject(project);
-  };
-
-  const handleClose = () => {
-    setSelectedProject(null);
-  };
+  const handleShowMore = (project) => setSelectedProject(project);
+  const handleClose = () => setSelectedProject(null);
 
   const projects = [
     {
@@ -51,22 +46,23 @@ function Projects() {
 
   return (
     <div
-      className="row mx-5 my-5 px-5 py-5 rounded"
+      className="row mx-3 mx-md-5 my-5 px-3 px-md-5 py-5 rounded"
       id="projects"
       style={{ border: "2px solid #010000FF" }}
     >
-      <h3 className="mb-5">My Works</h3>
-      <div className="d-flex justify-content-around flex-wrap w-100">
+      <h3 className="mb-2 text-center text-md-start">My Works</h3>
+
+      <div className="row gy-4">
         {projects.map((project, index) => (
-          <div className="col-md-3 d-flex justify-content-center" key={index}>
+          <div className="col-12 col-sm-6 col-lg-3 d-flex justify-content-center" key={index}>
             <div
               className="card d-flex flex-column"
               style={{
-                width: "17rem",
-                textAlign: "justify",
+                width: "100%",
+                maxWidth: "17rem",
                 border: "2px solid #1a1b1c",
                 boxShadow: "2px 2px grey",
-                minHeight: "200px",
+                textAlign: "justify",
               }}
             >
               <div className="card-body d-flex flex-column">
@@ -74,32 +70,37 @@ function Projects() {
                 <p className="card-subtitle mb-2 text-muted">{project.date}</p>
                 <p className="card-text flex-grow-1">
                   {truncateDescription(project.description)}
-                  <button
-                    className="btn btn-link p-0"
-                    onClick={() => handleShowMore(project)}
-                    style={{ textDecoration: "none", color: "black",  }}
-                  >
-                    More
-                  </button>
+                  {project.description.split(" ").length > 17 && (
+                    <button
+                      className="btn btn-link p-0"
+                      onClick={() => handleShowMore(project)}
+                      style={{
+                        textDecoration: "none",
+                        color: "black",
+                        fontSize: "0.9rem",
+                      }}
+                    >
+                      More
+                    </button>
+                  )}
                 </p>
-                {project.description.split(" ").length > 17}
-                <a
-                  href={project.link}
-                  className="btn btn-outline-dark"
-                  role="button"
-                  aria-pressed="true"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View on GitHub
-                </a>
+                {project.link && (
+                  <a
+                    href={project.link}
+                    className="btn btn-outline-dark mt-auto"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View on GitHub
+                  </a>
+                )}
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Bootstrap Modal for Showing Full Details */}
+      {/* Modal */}
       {selectedProject && (
         <div
           className="modal fade show d-block"
@@ -111,6 +112,12 @@ function Projects() {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title">{selectedProject.title}</h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  aria-label="Close"
+                  onClick={handleClose}
+                ></button>
               </div>
               <div className="modal-body">
                 <p className="text-muted">{selectedProject.date}</p>

@@ -6,12 +6,13 @@ import ProfessionalExperience from "./components/ProfessionalExperience";
 import Projects from "./components/Projects";
 import SkillSets from "./components/SkillSets";
 import Footer from "./components/Footer";
+import './App.css';
 
 function App() {
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/AthiraResume.pdf"; // Replace with your file path
-    link.download = "Athira Resume.pdf"; // Replace with the desired file name
+    link.href = "/AthiraResume.pdf";
+    link.download = "Athira Resume.pdf";
     link.click();
   };
 
@@ -25,41 +26,33 @@ function App() {
     color: '#00246B',
     padding: '2rem',
   };
-  
-
 
   return (
     <div className="App position-relative" style={backgroundStyle}>
       <Links />
-      <div
-        className="row mx-5 rounded px-2"
-        style={{ height: "500px",  
-           }}
-      >
-        <div
-          className="d-flex gap-3 align-items-center px-5"
-          style={{ color: "black" }}
-        >
-        <img
-          src={`${process.env.PUBLIC_URL}/images/me.jpg`}
-          alt="my"
-          style={{
-            borderRadius: "15px",
-            width: "110px",
-            height: "150px",
-            objectFit: "cover",
-          }}
-        />
 
+      <div className="container my-5 py-5">
+        <div className="row align-items-center text-center text-md-start">
+          <div className="col-12 col-md-3 mb-3 mb-md-0 d-flex justify-content-center">
+            <img
+              src={`${process.env.PUBLIC_URL}/images/me.jpg`}
+              alt="my"
+              style={{
+                borderRadius: "15px",
+                width: "100%",
+                maxWidth: "150px",
+                height: "auto",
+                objectFit: "cover",
+              }}
+            />
+          </div>
 
-          <div style={{ flex: 1 }}>
+          <div className="col-12 col-md-6">
             <h1
               className="mb-1"
               style={{
                 fontSize: "32px",
                 fontWeight: "bold",
-                textAlign: "left",
-                margin: 0,
                 color: "#00246B",
               }}
             >
@@ -69,16 +62,17 @@ function App() {
               style={{
                 marginTop: "10px",
                 marginBottom: 0,
-                textAlign: "justify",
                 fontSize: "16px",
-                width: "520px",
                 color: "#000000FF",
+                textAlign: "justify",
               }}
             >
               Motivated and detail-oriented Python Full Stack Developer with experience in Django, React, and MySQL. Passionate about building scalable web applications and eager to apply problem-solving and technical skills to innovative projects.
             </p>
           </div>
-          <div><br /><br />
+
+          {/* Button Section */}
+          <div className="col-12 col-md-3 mt-3 mt-md-0 d-flex justify-content-center justify-content-md-end">
             <button
               onClick={handleDownload}
               style={{
@@ -89,7 +83,6 @@ function App() {
                 color: "white",
                 border: "none",
                 borderRadius: "25px",
-                marginRight: "400px",
               }}
             >
               Resume
@@ -97,7 +90,8 @@ function App() {
           </div>
         </div>
       </div>
-     <Contacts />
+
+      <Contacts />
       <ProfessionalExperience />
       <Certifications />
       <Projects />
@@ -107,4 +101,5 @@ function App() {
     </div>
   );
 }
+
 export default App;
