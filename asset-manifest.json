@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Athira_portfolio/static/css/main.9d0934b1.css",
-    "main.js": "/Athira_portfolio/static/js/main.0da04dd9.js",
+    "main.css": "/Athira_portfolio/static/css/main.327d7e1a.css",
+    "main.js": "/Athira_portfolio/static/js/main.bc38a33c.js",
     "static/js/453.1407b060.chunk.js": "/Athira_portfolio/static/js/453.1407b060.chunk.js",
     "index.html": "/Athira_portfolio/index.html",
-    "main.9d0934b1.css.map": "/Athira_portfolio/static/css/main.9d0934b1.css.map",
-    "main.0da04dd9.js.map": "/Athira_portfolio/static/js/main.0da04dd9.js.map",
+    "main.327d7e1a.css.map": "/Athira_portfolio/static/css/main.327d7e1a.css.map",
+    "main.bc38a33c.js.map": "/Athira_portfolio/static/js/main.bc38a33c.js.map",
     "453.1407b060.chunk.js.map": "/Athira_portfolio/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9d0934b1.css",
-    "static/js/main.0da04dd9.js"
+    "static/css/main.327d7e1a.css",
+    "static/js/main.bc38a33c.js"
   ]
 }
