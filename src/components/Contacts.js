@@ -6,8 +6,8 @@ function Contacts() {
     { icon: "fa-solid fa-phone", alt: "6282794146", href: "tel:6282794146" },
     {
       icon: "fa-solid fa-envelope",
-      alt: "athiraminnu1999@gmail.com",
-      href: "mailto:athiraminnu1999@gmail.com",
+      alt: "athiraa1018@gmail.com",
+      href: "mailto:athiraa1018@gmail.com",
     },
     {
       icon: "fa-brands fa-linkedin-in",

@@ -5,7 +5,6 @@ import Links from "./components/Links";
 import ProfessionalExperience from "./components/ProfessionalExperience";
 import Projects from "./components/Projects";
 import SkillSets from "./components/SkillSets";
-import Footer from "./components/Footer";
 import './App.css';
 
 function App() {
@@ -96,7 +95,7 @@ Motivated and detail-oriented aspiring React.js Developer with a strong foundati
       <Projects />
       <SkillSets />
       <Education />
-      <Footer />
+
     </div>
   );
 }
