@@ -14,12 +14,19 @@ function Projects() {
   const handleClose = () => setSelectedProject(null);
 
   const projects = [
+  {
+      title: "Fitness Studio API",
+      date: "06/2025 – 06/2025",
+      description:
+        "Developed a Fitness Studio API using Django (backend). Implemented an api to view all the classes available like Yoga and Zumba classes, clients can book a slot for the classes using mail id and an api to view all the booking under a particular mail id. Optimized database queries in MySQL to ensure fast scheduling and retrieval of data.",
+      link: "https://github.com/Athiraminnu/Care-Connect.git",
+    },
     {
       title: "Care Connect",
-      date: "02/2025 – Present",
+      date: "02/2025 – 05/2025",
       description:
-        "Developing a doctor appointment booking system using Django (backend) and React.js (frontend). Implemented user authentication and role-based access for patients and doctors. Integrated RESTful APIs for seamless communication between frontend and backend. Optimized database queries in MySQL to ensure fast scheduling and retrieval of appointments.",
-      link: "https://github.com/Athiraminnu/Care-Connect.git",
+        "Developed a doctor appointment booking system using Django (backend) and React.js (frontend). Implemented user authentication and role-based access for patients and doctors. Integrated RESTful APIs for seamless communication between frontend and backend. Optimized database queries in MySQL to ensure fast scheduling and retrieval of appointments.",
+      link: "https://github.com/Athiraminnu/fitness_studio_api.git",
     },
     {
       title: "Borrow Shelf",
