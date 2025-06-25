@@ -10,7 +10,7 @@ import './App.css';
 function App() {
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/AthiraResume.pdf";
+    link.href = "/ATHIRA Resume.pdf";
     link.download = "Athira Resume.pdf";
     link.click();
   };
@@ -70,7 +70,7 @@ Motivated and detail-oriented aspiring React.js Developer with a strong foundati
           </div>
 
           {/* Button Section */}
-          <div className="col-12 col-md-3 mt-3 mt-md-0 d-flex justify-content-center justify-content-md-end">
+          <div className="col-12 col-md-2 mt-3 mt-md-0 d-flex justify-content-center justify-content-md-end">
             <button
               onClick={handleDownload}
               style={{

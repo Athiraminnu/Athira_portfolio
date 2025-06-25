@@ -50,9 +50,9 @@ function Contacts() {
   };
 
   const iconStyle = {
-    fontSize: "1.2rem",
+    fontSize: "1rem",
     color: "black",
-    padding: "0.5rem",
+    padding: "0rem",
   };
 
 const labelStyle = (visible) => ({
@@ -65,7 +65,7 @@ const labelStyle = (visible) => ({
 });
 
   const linkStyle = {
-    fontSize: "1rem",
+    fontSize: "0.9rem",
     color: "black",
     textDecoration: "none",
   };
@@ -114,7 +114,7 @@ const itemStyle = (hovered) => ({
             <i className={info.icon} style={iconStyle}></i>
           </a>
           {isMobile && hoverInfo === index && (
-            <p style={{ fontSize: "0.8rem", textAlign: "center", marginTop: "0.3rem" }}>
+            <p style={{ fontSize: "0.3rem", textAlign: "center", marginTop: "0.3rem" }}>
                 {info.alt}
             </p>
           )}
