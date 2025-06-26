@@ -10,7 +10,7 @@ import './App.css';
 function App() {
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/ATHIRA Resume.pdf";
+    link.href = "/ATHIRA A Resume.pdf";
     link.download = "Athira Resume.pdf";
     link.click();
   };
